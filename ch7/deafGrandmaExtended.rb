@@ -1,5 +1,5 @@
 puts 'Hello, sonny!'
-
+cnt = 0
 while true
   word = gets.chomp
 
@@ -10,8 +10,11 @@ while true
   end
 
   if word == 'BYE'
-      puts 'BYE, HUN!'
+    cnt = cnt + 1
+    if cnt == 3
+      puts 'BYE'
     break
+    end
   end
-  
+
 end
