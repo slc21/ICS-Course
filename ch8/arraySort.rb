@@ -1,5 +1,5 @@
 languages = []
-
+puts 'Sort words and press enter when done'
 while true
 
   var = gets.chomp
