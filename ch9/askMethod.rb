@@ -3,11 +3,9 @@ def ask question
     puts question
     reply = gets.chomp.downcase
     if reply == 'yes'
-      puts 'true'
-      break
+      return 'true'
     else
-      puts 'false'
-      break
+      return 'false'
     end
   end
 end
