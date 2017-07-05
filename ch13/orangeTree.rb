@@ -13,6 +13,9 @@ class Tree
     @height = @height + rand(4) + rand(2)
     puts "One year passes..."
     @yearPass = @yearPass + 1
+    if @height >= rand(21)
+      @oranges = @oranges + rand(21)
+    end
   end
 
   def height
@@ -21,7 +24,7 @@ class Tree
 
   def age
     puts "#{@name} is #{@yearPass} years old"
-    if @yearPass >= 20
+    if @yearPass >= rand(21)
       puts "#{@name} has died."
       exit
     end
@@ -29,10 +32,12 @@ class Tree
   end
 
   def orangeCount
-    if @height >= 20
-      @oranges = @oranges + rand(21)
-    end
-      puts "#{@name} has #{@oranges} oranges"
+
+      if @oranges == 0
+        puts "No oranges this year"
+      else
+        puts "#{@name} has #{@oranges} oranges"
+      end
   end
 
   def pickOrange
