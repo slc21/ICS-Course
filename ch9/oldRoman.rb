@@ -1,13 +1,14 @@
-def roman_num num
+def oldRoman(num)
+  conversions = [["M", 1000], ["C", 100],
+                 ["D", 500], ['L', 50],
+                 ["X", 10], ['V', 5],
+                 ["I", 1]]
 
-  numb = ''
-  numb = numb + 'M' * (num    / 1000)
-  numb = numb + 'D' * (num % 1000 / 500)
-  numb = numb + 'C' * (num % 500 / 100)
-  numb = numb + 'L' * (num % 100 / 50)
-  numb = numb + 'X' * (num % 50 / 10)
-  numb = numb + 'V' * (num % 10 / 5)
-  numb = numb + 'I' * (num % 5 / 1 )
-
+  roman = ""
+  conversions.each do |numlet|
+    roman += numlet[0] * (num / numlet[1])
+    num = num % numlet[1]
+  end
+  return roman
 end
-puts roman_num 1035
+puts oldRoman 9

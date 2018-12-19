@@ -1,15 +1,15 @@
-def ask question
-  while true
-    puts question
-    reply = gets.chomp.downcase
-    if reply == 'yes'
-      return 'true'
-    else
-      return 'false'
-    end
-  end
+def ask(question)
+  puts question
+  return gets.chomp.downcase == "yes"
 end
 
-ask 'Will this work?'
-ask 'Is this what you mean?'
-ask 'Did I do this right?'
+questions = ["Will this work?",
+             "Is this what you mean?",
+             "Did I do this right?"]
+results = []
+
+questions.each do |question|
+  results += [ask(question)]
+end
+
+puts results
